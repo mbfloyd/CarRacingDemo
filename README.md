@@ -26,7 +26,7 @@ Data Storage
 
 ======================
 
-Completed Assignment was contained to the OfflinePracticeMode for easier Reference.
+Completed Assignment was contained to the OfflinePracticeMode folder for easier Reference.
 
 I implemented a Dependency Injection approach, to add the new features without creating new direct dependencies.
 
