@@ -155,5 +155,18 @@ namespace ALIyerEdon
 				purchaseUI.SetActive(true);
 			}
 		}
+
+		public void EngageOfflinePracticeMode()
+		{
+			//level select is in active by default, so we have to fetch the ref locally, instead of in an Awake/Setup
+			IDataManager dataManager = DIContainer.Instance.Resolve<IDataManager>();	
+			dataManager.SetRaceMode(RaceMode.OfflinePractice);
+		}
+
+		public void DisengageOfflinePracticeMode()
+		{
+			IDataManager dataManager = DIContainer.Instance.Resolve<IDataManager>();
+			dataManager.SetRaceMode(RaceMode.Real);
+		}
 	}
 }

@@ -8,6 +8,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using ALIyerEdon;
+using System;
+using UnityEngine.SceneManagement;
 
 namespace ALIyerEdon
 {
@@ -82,6 +84,15 @@ namespace ALIyerEdon
         string playerName = "Player";
         bool canStart;
 
+        private IDataManager dataManager;
+        private ITypeEventManager eventManager;
+
+        private void Awake()
+        {
+            eventManager = DIContainer.Instance.Resolve<ITypeEventManager>();
+            dataManager = DIContainer.Instance.Resolve<IDataManager>();
+        }
+
         IEnumerator Start()
         {
             Time.timeScale = timeScale;
@@ -102,34 +113,17 @@ namespace ALIyerEdon
 
             FindFirstObjectByType<Start_Counter>().timeScale = timeScale;
 
-            // First racer is the player's prefab
-            racerPrefabs[0] = playerPrefabs[PlayerPrefs.GetInt("CarID")];
-
             // Initial info
             carPositions = new Car_Position[racerPrefabs.Length];
             racerNames = new string[racerPrefabs.Length];
 
-            // Instantiate racers and prefabs
-            for (int i = 0; i < racerPrefabs.Length; i++)
+            if (dataManager.GetRaceMode() == RaceMode.OfflinePractice)
             {
-                GameObject racer = Instantiate(racerPrefabs[i], spawnPositions[i].position,
-                     spawnPositions[i].rotation) as GameObject;
-
-                // Show or hide car position on the top of the car
-                racer.GetComponent<Car_Position>().displayPosition = false;
-
-                racer.GetComponent<Car_AI>().raceStarted = false;
-
-                racer.GetComponent<Car_Position>().RacerID = i;
-
-                carPositions[i] = racer.GetComponent<Car_Position>();
-                racerNames[i] = racerPrefabs[i].GetComponent<Car_Position>().RacerName;
-
-                // Add the racers position class to the list
-                Racer_Position newRacePos = new Racer_Position() { Name = racerNames[i], Position = 0 };
-                positions.Add(newRacePos);
-                sortedPositions.Add(newRacePos);
-
+                SetupOfflinePracticeRacers();
+            }
+            else
+            {
+                SetupRacers();
             }
 
             playerName = GameObject.FindGameObjectWithTag("Player").GetComponent
@@ -155,18 +149,95 @@ namespace ALIyerEdon
             Update_Positions_Display();
         }
 
+        private void SetupRacers()
+        {
+            // First racer is the player's prefab
+            GameObject playerPrefab = playerPrefabs[PlayerPrefs.GetInt("CarID")];
+            racerPrefabs[0] = playerPrefab;
+
+            // Instantiate racers and prefabs
+            for (int i = 0; i < racerPrefabs.Length; i++)
+            {
+                string racerName = racerPrefabs[i].GetComponent<Car_Position>().RacerName;
+                SetupRacer(i, racerName, racerPrefabs[i], spawnPositions[i]);
+            }
+        }
+
+        private void SetupOfflinePracticeRacers()
+        {
+            // Instantiate player
+            GameObject playerPrefab = playerPrefabs[PlayerPrefs.GetInt("CarID")];
+            string racerName = playerPrefab.GetComponent<Car_Position>().RacerName;
+            GameObject practiceRacerGO = SetupRacer(0, racerName, playerPrefab, spawnPositions[0]);
+            PracticeRacer practiceRacer = practiceRacerGO.AddComponent<PracticeRacer>();
+            practiceRacer.Setup();
+
+            //if practice data exists for this level
+            Scene currentScene = SceneManager.GetActiveScene();
+            string levelName = currentScene.name;
+            PracticeLevelData levelData = dataManager.GetPracticeLevelData(levelName);
+            if (levelData != null) {
+                // create Ghost Racer
+                int ghostCarId = levelData.carId;
+                if (ghostCarId >= playerPrefabs.Length) {
+                    ghostCarId = 0;
+                }
+                GameObject ghostRacerPrefab = playerPrefabs[ghostCarId];
+                string ghostRacerName = "Ghost Racer";
+                GameObject ghostRacerGO = SetupRacer(1, ghostRacerName, ghostRacerPrefab, spawnPositions[0]);
+                ghostRacerGO.tag = "Racer";
+                ghostRacerGO.name = ghostRacerName;
+                GhostRacer ghostRacer = ghostRacerGO.AddComponent<GhostRacer>();
+                ghostRacer.Setup();
+            
+            }
+        }
+
+        private GameObject SetupRacer(int racerId, string racerName, GameObject prefab, Transform spawnPosition)
+        {
+            GameObject racer = Instantiate(prefab, spawnPosition.position, spawnPosition.rotation) as GameObject;
+
+            // Show or hide car position on the top of the car
+            Car_Position carPosition = racer.GetComponent<Car_Position>();
+            carPosition.displayPosition = false;
+            carPosition.RacerID = racerId;
+            carPosition.RacerName = racerName;
+
+            Car_AI carAI = racer.GetComponent<Car_AI>();
+            carAI.raceStarted = false;
+
+            carPositions[racerId] = carPosition;
+            racerNames[racerId] = racerName;
+
+            // Add the racers position class to the list
+            Racer_Position newRacePos = new Racer_Position() { Name = racerNames[racerId], Position = 0 };
+            positions.Add(newRacePos);
+            sortedPositions.Add(newRacePos);
+
+            return racer;
+        }
+
         public void Update_Positions_Display()
         {
-            for (int a = 0; a < FindFirstObjectByType<Start_Finish_UI>().positions.Length; a++)
+            try
             {
-                try
+                Start_Finish_UI start_Finish_UI = FindFirstObjectByType<Start_Finish_UI>();
+                int numOfDrivers = sortedPositions.Count;
+                for (int a = 0; a < start_Finish_UI.positions.Length; a++)
                 {
-                    FindFirstObjectByType<Start_Finish_UI>().driversName[a].text =
-                       sortedPositions[a].Name.ToString();
+                    if (a < numOfDrivers)
+                    {
+                        start_Finish_UI.driversName[a].text = sortedPositions[a].Name.ToString();
+                        start_Finish_UI.positions[a].text = (a+1).ToString();
+                    }
+                    else
+                    {
+                        start_Finish_UI.driversName[a].text = "";
+                        start_Finish_UI.positions[a].text = "";
+                    }
                 }
-                catch { }
             }
-
+                catch { }
             startUI.GetComponent<Start_Finish_UI>().totalScores.text =
                 "Total Scores : " +
                 PlayerPrefs.GetInt("TotalScores").ToString();
@@ -256,12 +327,15 @@ namespace ALIyerEdon
 
             // Racers can check reverse mode after 2 seconds from the race start 
             foreach (Car_AI carAI in FindObjectsOfType<Car_AI>())
-                 carAI.canReverseCheck = true;
+                carAI.canReverseCheck = true;
 
+            eventManager.TriggerEvent(new RaceStartEvent());
          }
          public void Finish_Race()
          {
-             GameObject.FindGameObjectWithTag("Player").GetComponent<Car_AI>().enabled = true;
+            eventManager.TriggerEvent(new RaceEndEvent());
+
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Car_AI>().enabled = true;
             FindFirstObjectByType<InputSystem>().canControl = false;
             FindFirstObjectByType<CameraSwitch>().SelectCamera(0);
 
@@ -328,25 +402,35 @@ namespace ALIyerEdon
                  else
                      Debug.Log("Please add -Lap Info- text object in the -Race Manager- component");
              }
-             //_________________________________
+            //_________________________________
 
-             // Positions info
+            // Positions info
+            int numOfRacers = sortedPositions.Count;
              for (int pos = 0; pos < racerInfo.Length; pos++)
-             {
-                 try
-                 {
-                     if (racerInfo[pos])
-                         racerInfo[pos].text = "   " + (pos + 1).ToString() + "   |   " + sortedPositions[pos].Name.ToString();
-                 }
-                 catch { }
-             }
+            {
+                try
+                {
+                    if (racerInfo[pos])
+                    {
+                        if (pos < numOfRacers)
+                        {
+                            racerInfo[pos].text = "   " + (pos + 1).ToString() + "   |   " + sortedPositions[pos].Name.ToString();
+                        }
+                        else
+                        {
+                            racerInfo[pos].text = "";
+                        }
+                    }
+                }
+                catch { }
+            }
          }
 
          // List and sort car positions based on the istance form the checkpoints
          public void Update_Position(int racerID, string totalPoints)
          {
              // List and sort racer positions based on the distance from the checkpoint
-             positions[racerID].Position = float.Parse(totalPoints);
+            positions[racerID].Position = float.Parse(totalPoints);
              sortedPositions = positions.OrderBy(number => number.Position).ToList();
 
              sortedPositions.Reverse();
@@ -354,22 +438,31 @@ namespace ALIyerEdon
 
              for (int b = 0; b < sortedPositions.Count; b++)
              {
-                 if (playerPosition.RacerName == sortedPositions[b].Name)
-                 {
-                     playerPosition.currentPosition = b;
-                 }
+                if (playerPosition.RacerName == sortedPositions[b].Name)
+                {
+                    playerPosition.currentPosition = b;
+                }
              }
 
-             // Enable current position icon (on the top of the car) for each racer
+            // Enable current position icon (on the top of the car) for each racer
+            
              for (int a = 0; a < carPositions.Length; a++)
-             {
-                 for (int c = 0; c < carPositions.Length; c++)
-                 {
-                     if (carPositions[a].RacerName == sortedPositions[c].Name)
-                     {
-                         carPositions[a].Update_Position(c);
-                     }
-                 }/*
+            {
+                if (carPositions[a] == null)
+                {
+                    continue;
+                }
+                for (int c = 0; c < carPositions.Length; c++)
+                {
+                    if (c >= sortedPositions.Count || sortedPositions[c] == null)
+                    {
+                        continue;
+                    }
+                    if (carPositions[a].RacerName == sortedPositions[c].Name)
+                    {
+                        carPositions[a].Update_Position(c);
+                    }
+                }/*
                  if (carPositions[a].RacerName == sortedPositions[0].Name)
              {
                  carPositions[a].Update_Position(0);
@@ -391,7 +484,7 @@ namespace ALIyerEdon
              {
                  carPositions[a].Update_Position(4);
              }*/
-        }
+            }
 
         //_________________________________
 
