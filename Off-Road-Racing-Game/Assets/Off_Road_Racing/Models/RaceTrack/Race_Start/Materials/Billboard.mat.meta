@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: da426f5b4c9c6c147abd95d30c7fcf98
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288294
+  packageName: Off-Road Racing Game
+  packageVersion: 2.5
+  assetPath: Assets/Off_Road_Racing/Models/RaceTrack/Race_Start/Materials/Billboard.mat
+  uploadId: 728624

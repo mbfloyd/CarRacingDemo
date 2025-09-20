@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 9ce1a99c0f923c9499a757b920e1fdbd
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288294
+  packageName: Off-Road Racing Game
+  packageVersion: 2.5
+  assetPath: Assets/Off_Road_Racing/Textures/Global/IBL_Sky 1.mat
+  uploadId: 728624

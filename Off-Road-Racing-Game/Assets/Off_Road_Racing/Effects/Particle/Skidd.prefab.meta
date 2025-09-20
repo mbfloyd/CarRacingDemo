@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8e9372e7bfbdfab41b5ef33ce542807d
+timeCreated: 1475692270
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288294
+  packageName: Off-Road Racing Game
+  packageVersion: 2.5
+  assetPath: Assets/Off_Road_Racing/Effects/Particle/Skidd.prefab
+  uploadId: 728624

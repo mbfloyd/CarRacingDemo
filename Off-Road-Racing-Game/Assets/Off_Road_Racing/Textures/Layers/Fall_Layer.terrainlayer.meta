@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0213f7fde81910a46b8b8a3bee6edb7e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 8574412962073106934
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288294
+  packageName: Off-Road Racing Game
+  packageVersion: 2.5
+  assetPath: Assets/Off_Road_Racing/Textures/Layers/Fall_Layer.terrainlayer
+  uploadId: 728624

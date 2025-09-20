@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 6052fcc943861c94d97085dcd9732c0d
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288294
+  packageName: Off-Road Racing Game
+  packageVersion: 2.5
+  assetPath: Assets/Off_Road_Racing/Shaders/Standard_Bark_Optimized.shader
+  uploadId: 728624

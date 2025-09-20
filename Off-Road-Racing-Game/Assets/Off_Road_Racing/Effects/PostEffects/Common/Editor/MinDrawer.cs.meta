@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: 9c615a85f13c6764fa4496d1d7f75f52
+timeCreated: 1453220014
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288294
+  packageName: Off-Road Racing Game
+  packageVersion: 2.5
+  assetPath: Assets/Off_Road_Racing/Effects/PostEffects/Common/Editor/MinDrawer.cs
+  uploadId: 728624

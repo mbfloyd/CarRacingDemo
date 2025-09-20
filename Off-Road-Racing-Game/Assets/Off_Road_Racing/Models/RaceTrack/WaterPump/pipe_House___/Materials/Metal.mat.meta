@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 825d48b6e7d481d43b321c1bf3ddae62
+timeCreated: 1497643928
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288294
+  packageName: Off-Road Racing Game
+  packageVersion: 2.5
+  assetPath: Assets/Off_Road_Racing/Models/RaceTrack/WaterPump/pipe_House___/Materials/Metal.mat
+  uploadId: 728624

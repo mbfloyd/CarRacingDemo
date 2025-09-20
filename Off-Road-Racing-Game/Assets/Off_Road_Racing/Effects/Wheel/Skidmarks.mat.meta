@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 603df97df4cc2104889c33f9f2a2c94b
+timeCreated: 1475692228
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288294
+  packageName: Off-Road Racing Game
+  packageVersion: 2.5
+  assetPath: Assets/Off_Road_Racing/Effects/Wheel/Skidmarks.mat
+  uploadId: 728624

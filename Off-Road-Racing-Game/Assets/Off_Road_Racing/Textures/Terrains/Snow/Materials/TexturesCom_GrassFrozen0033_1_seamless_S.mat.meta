@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 41d318e67ea26d04480cfe395ced5f62
+timeCreated: 1497265137
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288294
+  packageName: Off-Road Racing Game
+  packageVersion: 2.5
+  assetPath: Assets/Off_Road_Racing/Textures/Terrains/Snow/Materials/TexturesCom_GrassFrozen0033_1_seamless_S.mat
+  uploadId: 728624

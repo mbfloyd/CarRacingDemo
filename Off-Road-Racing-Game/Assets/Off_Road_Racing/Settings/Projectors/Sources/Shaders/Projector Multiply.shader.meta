@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: ac96f5c0b697340a887ac2bd77a0bddc
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288294
+  packageName: Off-Road Racing Game
+  packageVersion: 2.5
+  assetPath: Assets/Off_Road_Racing/Settings/Projectors/Sources/Shaders/Projector
+    Multiply.shader
+  uploadId: 728624

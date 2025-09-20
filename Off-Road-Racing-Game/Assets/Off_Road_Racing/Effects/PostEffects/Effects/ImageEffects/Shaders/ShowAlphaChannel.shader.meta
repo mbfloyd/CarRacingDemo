@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: da310021e2a4142429d95c537846dc38
+ShaderImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288294
+  packageName: Off-Road Racing Game
+  packageVersion: 2.5
+  assetPath: Assets/Off_Road_Racing/Effects/PostEffects/Effects/ImageEffects/Shaders/ShowAlphaChannel.shader
+  uploadId: 728624

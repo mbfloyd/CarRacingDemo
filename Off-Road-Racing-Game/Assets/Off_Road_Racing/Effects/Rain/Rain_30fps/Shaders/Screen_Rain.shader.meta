@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 235b8935e6a33344596a510469f27040
+timeCreated: 1488108714
+licenseType: Store
+ShaderImporter:
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288294
+  packageName: Off-Road Racing Game
+  packageVersion: 2.5
+  assetPath: Assets/Off_Road_Racing/Effects/Rain/Rain_30fps/Shaders/Screen_Rain.shader
+  uploadId: 728624

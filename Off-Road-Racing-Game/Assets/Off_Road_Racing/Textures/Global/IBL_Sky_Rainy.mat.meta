@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b354413e08fb5524aa0016961cba62bb
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288294
+  packageName: Off-Road Racing Game
+  packageVersion: 2.5
+  assetPath: Assets/Off_Road_Racing/Textures/Global/IBL_Sky_Rainy.mat
+  uploadId: 728624

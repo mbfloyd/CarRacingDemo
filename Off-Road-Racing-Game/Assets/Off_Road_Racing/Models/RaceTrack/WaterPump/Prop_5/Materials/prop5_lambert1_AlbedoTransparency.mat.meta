@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: db0d39a849db3f24182040701bfc2019
+timeCreated: 1497645483
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288294
+  packageName: Off-Road Racing Game
+  packageVersion: 2.5
+  assetPath: Assets/Off_Road_Racing/Models/RaceTrack/WaterPump/Prop_5/Materials/prop5_lambert1_AlbedoTransparency.mat
+  uploadId: 728624

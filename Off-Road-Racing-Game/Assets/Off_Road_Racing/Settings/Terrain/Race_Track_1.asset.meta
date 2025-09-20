@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 80ba6252b649b7d43a5c3592fb1e3231
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 15600000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288294
+  packageName: Off-Road Racing Game
+  packageVersion: 2.5
+  assetPath: Assets/Off_Road_Racing/Settings/Terrain/Race_Track_1.asset
+  uploadId: 728624

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0f6ed613a6bd65d40aaafd34680c9ed0
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288294
+  packageName: Off-Road Racing Game
+  packageVersion: 2.5
+  assetPath: Assets/Off_Road_Racing/Models/Cars/Buggy/Materials/Body 1.mat
+  uploadId: 728624

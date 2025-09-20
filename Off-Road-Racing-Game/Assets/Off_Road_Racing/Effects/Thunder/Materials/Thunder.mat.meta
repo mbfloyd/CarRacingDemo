@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d192140ae35b1b746a3ec05031246831
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288294
+  packageName: Off-Road Racing Game
+  packageVersion: 2.5
+  assetPath: Assets/Off_Road_Racing/Effects/Thunder/Materials/Thunder.mat
+  uploadId: 728624

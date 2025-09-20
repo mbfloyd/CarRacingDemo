@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 3a5424162d681eb48bc73ea563fed83b
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  preprocessorOverride: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288294
+  packageName: Off-Road Racing Game
+  packageVersion: 2.5
+  assetPath: Assets/Off_Road_Racing/Shaders/Standard_Leaf_VC_Optimized.shader
+  uploadId: 728624

@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: b07292ae638766047a6751da7552e566
+timeCreated: 1453220005
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288294
+  packageName: Off-Road Racing Game
+  packageVersion: 2.5
+  assetPath: Assets/Off_Road_Racing/Effects/PostEffects/Common/MinAttribute.cs
+  uploadId: 728624

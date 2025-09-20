@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 14768d3865b1342e3a861fbe19ba2db2
+ShaderImporter:
+  userData: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288294
+  packageName: Off-Road Racing Game
+  packageVersion: 2.5
+  assetPath: Assets/Off_Road_Racing/Effects/PostEffects/Effects/ImageEffects/Shaders/ConvertDepth.shader
+  uploadId: 728624

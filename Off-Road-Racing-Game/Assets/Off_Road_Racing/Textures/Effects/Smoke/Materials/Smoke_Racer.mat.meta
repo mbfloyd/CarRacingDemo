@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: a6a93cc09d9d98c4a824f070c46f1ecc
+timeCreated: 1497079706
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288294
+  packageName: Off-Road Racing Game
+  packageVersion: 2.5
+  assetPath: Assets/Off_Road_Racing/Textures/Effects/Smoke/Materials/Smoke_Racer.mat
+  uploadId: 728624

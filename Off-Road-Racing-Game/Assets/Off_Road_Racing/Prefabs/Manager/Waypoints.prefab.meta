@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7a86c78395cc919468e0b468b786b782
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288294
+  packageName: Off-Road Racing Game
+  packageVersion: 2.5
+  assetPath: Assets/Off_Road_Racing/Prefabs/Manager/Waypoints.prefab
+  uploadId: 728624

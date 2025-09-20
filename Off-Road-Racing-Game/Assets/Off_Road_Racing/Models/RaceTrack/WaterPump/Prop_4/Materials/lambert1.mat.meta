@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: e3b9551632b14e54c8da1c3310e14370
+timeCreated: 1497643926
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288294
+  packageName: Off-Road Racing Game
+  packageVersion: 2.5
+  assetPath: Assets/Off_Road_Racing/Models/RaceTrack/WaterPump/Prop_4/Materials/lambert1.mat
+  uploadId: 728624

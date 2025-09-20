@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7467bc14c2b15824db8d5e2ed4966403
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 8574412962073106934
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 288294
+  packageName: Off-Road Racing Game
+  packageVersion: 2.5
+  assetPath: Assets/Off_Road_Racing/Textures/Layers/Rock_Layer.terrainlayer
+  uploadId: 728624
